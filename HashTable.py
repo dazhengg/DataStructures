@@ -7,7 +7,6 @@ class HashEntry: #SEPERATE CHAINING.
     def print(self):
         print("  '" + self.key + "' / " + str(self.value))
 
-
 class Hashtable:
     def __init__(self, size):
         self.size = size #size of list
@@ -19,8 +18,6 @@ class Hashtable:
             hash += ord(char) #gives ascii value.
 
         return hash % self.size    #another simple way for hash function is to key % len(self.size)
-
-
 
     def rehash(self, entry, key, value):
         while entry and entry.key != key:
@@ -61,11 +58,6 @@ class Hashtable:
             else:
                 continue
 
-
-
-
-
-
     def delete(self, key):
         slot = self.hashing_function(key)
         entry = self.table[slot]
@@ -76,14 +68,6 @@ class Hashtable:
             entry = entry.next
 
         prev.next = entry.next
-
-
-
-
-
-
-
-
 
 
 ans = Hashtable(5)
